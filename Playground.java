@@ -1,3 +1,5 @@
+import GoFo.src.GoFoSystem.AvailableHours;
+
 import java.util.ArrayList;
 
 enum PlaygroundStatus{

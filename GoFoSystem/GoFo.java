@@ -1,11 +1,11 @@
 package GoFoSystem;
-import PlayerContent.*;
+import PlaygroundOwnreContent.Book;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * class is responsible for holding all the data of the system
+ * class is responsible for holding all the data of the system.
  */
 public class GoFo {
     private ArrayList<Player> players;
@@ -15,8 +15,8 @@ public class GoFo {
     private Administrator admin;
 
     /**
-     * constructor for GoFo class
-     * @param admin will be the administrator of the system
+     * constructor for GoFo class.
+     * @param admin will be the administrator of the system.
      */
     public GoFo(Administrator admin){
         this.admin = admin;
@@ -26,7 +26,7 @@ public class GoFo {
         books = new ArrayList<Book>(0);
     }
     /**
-     * This function prints all the books that are on the system so that another player can join the team
+     * This function prints all the books that are on the system so that another player can join the team.
      */
     public void viewBooks(){
         for(int i = 0; i<books.size(); i++){
@@ -35,7 +35,7 @@ public class GoFo {
     }
 
     /**
-     * This function prints all the playgrounds that are registered on the system so that a player can book them
+     * This function prints all the playgrounds that are registered on the system so that a player can book them.
      */
     public void viewPlaygrounds(){
         for(int i = 0; i<playgrounds.size(); i++){
@@ -44,8 +44,8 @@ public class GoFo {
     }
 
     /**
-     * Prints the playgrounds that are in this city
-     * @param city the city that we want the playgrounds that are in it
+     * Prints the playgrounds that are in this city.
+     * @param city the city that we want the playgrounds that are in it.
      */
     public void filterByLocation(String city){
         for(int i = 0; i<playgrounds.size(); i++){
@@ -64,24 +64,24 @@ public class GoFo {
     }*/
 
     /**
-     * Add to the system the playground that is registered so it could be viewed later by the player
-     * @param pg playground to be added to the system
+     * Add to the system the playground that is registered so it could be viewed later by the player.
+     * @param pg playground to be added to the system.
      */
     public void addPlayground(Playground pg){
         playgrounds.add(pg);
     }
 
     /**
-     * Add to the system the book that is booked by a playe so it could be viewed later by the player
-     * @param book to be added to the system
+     * Add to the system the book that is booked by a player so it could be viewed later by the player.
+     * @param book to be added to the system.
      */
     public void addPBook(Book book){
         books.add(book);
     }
 
     /**
-     * It removes the book from the system if it is canceled or refused
-     * @param book to be removed
+     * It removes the book from the system if it is canceled or refused.
+     * @param book to be removed.
      */
     public void removeBook(Book book){
         for(int i = 0; i<books.size(); i++){
@@ -93,8 +93,8 @@ public class GoFo {
     }
 
     /**
-     * It removes the playground from the system if it is deleted by the admin
-     * @param pg playground to be deleted
+     * It removes the playground from the system if it is deleted by the admin.
+     * @param pg playground to be deleted.
      */
     public void removePlayground(Playground pg){
         for(int i = 0; i<playgrounds.size(); i++){
@@ -106,7 +106,7 @@ public class GoFo {
     }
 
     /**
-     * It is used to register a player or playground owner in the system
+     * It is used to register a player or playground owner in the system.
      */
     public void register(){
         System.out.print("Do you want to register as a player or playground owner: ");
@@ -139,7 +139,7 @@ public class GoFo {
                 System.out.print("Location street: ");
                 String street = input.nextLine();
                 Location loc = new Location(city, street);
-                User player = new Player(name, ID, pass, email, phone, loc);
+                User player = new Player(name, ID, pass, x, phone, loc);
                 players.add(player);
             }
         }
@@ -171,7 +171,7 @@ public class GoFo {
                 System.out.print("Location street: ");
                 String street = input.nextLine();
                 Location loc = new Location(city, street);
-                User owner = new PlaygroundOwner(name, ID, pass, email, phone, loc);
+                User owner = new PlaygroundOwner(name, ID, pass, x, phone, loc);
                 owners.add(owner);
             }
         }

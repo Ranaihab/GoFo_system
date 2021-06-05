@@ -1,4 +1,6 @@
-public class AvailableHours {
+package GoFoSystem;
+
+public class Date {
     int hours, minutes, day, month, year;
 
     public int getHours() {
@@ -41,7 +43,7 @@ public class AvailableHours {
         this.year = year;
     }
 
-    public AvailableHours(int hours, int minutes, int day, int month, int year) {
+    public Date(int hours, int minutes, int day, int month, int year) {
         this.hours = hours;
         this.minutes = minutes;
         this.day = day;
@@ -50,6 +52,6 @@ public class AvailableHours {
     }
     @Override
     public String toString(){
-        return "There is available slot in " + day + "/ " + month + "/ " + year + "at " + hours + ": " + minutes + "\n";
+        return "Date: " + day + "/ " + month + "/ " + year + "at " + hours + ": " + minutes + "\n";
     }
 }
