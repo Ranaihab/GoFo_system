@@ -1,5 +1,6 @@
 package GoFoSystem;
 import PlaygroundOwnreContent.Book;
+import PlaygroundOwnreContent.Playground;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,7 +10,7 @@ import java.util.Scanner;
  */
 public class GoFo {
     private ArrayList<Player> players;
-    private ArrayList<PlaygroundOwers> owners;
+    private ArrayList<PlaygroundOwner> owners;
     private ArrayList<Playground> playgrounds;
     private ArrayList<Book> books;
     private Administrator admin;

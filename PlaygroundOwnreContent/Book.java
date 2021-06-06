@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * This class contains all the information regarding a certain booking that happened.
  */
 public class Book {
-    private enum BookStatus{
+    public enum BookStatus{
         pending,
         accepted,
         refused
