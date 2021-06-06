@@ -30,6 +30,7 @@ public class Playground {
         private PlaygroundStatus status;
         private  ArrayList <String> complains;
         private ArrayList<Date> availableHours;
+        private ArrayList<Book> books;
         private ArrayList <String> review;
         private Book book;
         private PlaygroundOwner playgroundOwner;
@@ -46,6 +47,7 @@ public class Playground {
                 cancellationPeriod = 0;
                 ID = ++count;
         }
+
 
 
 
@@ -100,6 +102,22 @@ public class Playground {
     public void setLocation(Location location) {
             this.location = location;
         }
+
+    /**
+     * get all the books for this playground
+     * @return books
+     */
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
+
+    /**
+     * add book to the playground
+     * @param book
+     */
+    public void addBook(Book book) {
+        books.add(book);
+    }
 
     /**
      * get the playgroundOwner
@@ -279,6 +297,7 @@ public class Playground {
     public void setBook(Book book) {
             if (status == PlaygroundStatus.activate){
                 this.book = book;
+                noBooks++;
             }
         }
 
