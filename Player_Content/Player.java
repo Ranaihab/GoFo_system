@@ -1,5 +1,10 @@
 package Player_Content;
 
+import PlaygroundOwnerContent.Book;
+import PlaygroundOwnerContent.Book.BookStatus;
+import PlaygroundOwnerContent.Playground;
+import PlaygroundOwnerContent.Playground.PlaygroundStatus;
+
 /**
  * @author Alaa Mahmoud Ebrahim
  * ID: 20190105
@@ -45,24 +50,55 @@ public abstract class Player {
 		this.noBooks = noBooks;
 	}
 	
-	public void book(Playgroung playground)
+	/**
+	 * void function to book playgrounds 
+	 * @param playground
+	 */
+	public void book(Playground playground)
 	{
-		
+		playground.setStatus(PlaygroundStatus.activate);
 	}
 	
+	/**
+	 * boolean function to cancel book 
+	 * @param book
+	 * @return true if it's cancelled and false if it's not
+	 */
 	public boolean cancelBook(Book book)
 	{
+		if (book.getStatus().equals("pending"))
+		{
+			book.setStatus(BookStatus.refused);
+			return true;
+		}
 		
+		else return false;		
 	}
 	
+	/**
+	 * void functions to remove pending requests 
+	 * @param book
+	 */
 	public void removeRequests(Book book)
 	{
-		
+		if (book.getStatus().equals("pending"))
+		{
+			book.setStatus(BookStatus.refused);
+		}
 	}
 	
+	/**
+	 * check if there's book or not 
+	 * @param book
+	 * @return true if booked and false if it's not booked 
+	 */
 	public boolean book(Book book)
 	{
-		
+		if (book.getStatus().equals("accepted"))
+		{
+			return true;
+		}
+		else return false;
 	}
 
 }
