@@ -85,6 +85,28 @@ public class Playground {
         public void setName(String name) {
             this.name = name;
         }
+        
+        public static int getCount()
+        {
+        	return count;
+        }
+        /**
+         * gets the ID of the playground
+         * @return
+         */
+        public int getID()
+        {
+        	return ID;
+        }
+        
+        /**
+         * sets the ID of playground
+         * @param ID
+         */
+        public void setID(int ID)
+        {
+        	this.ID = ID;
+        }
 
     /**
      * get the playground location

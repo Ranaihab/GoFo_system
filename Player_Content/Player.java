@@ -20,18 +20,20 @@ import PlaygroundOwnerContent.Playground.PlaygroundStatus;
 /**
  * The Class is an abstract for generalizations with other classes
  */
-public abstract class Player {
+public class Player extends User {
 	protected int noBooks;
 	
 	/**
 	 * Constructor for initializing number of books 
 	 * @param noBooks
 	 */
-	public Player(int numB)
+	public Player(String n, int id, String mail, String pass, String ph, Location loc)
 	{
-		noBooks = numB;
+		super(n,id,mail,pass,ph,loc);
+		noBooks = 0;
 	}
 	
+
 	/**
 	 * Gets the number of books for player
 	 * @return noBooks

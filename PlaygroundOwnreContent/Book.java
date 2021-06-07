@@ -22,6 +22,18 @@ public class Book {
     private int id;
     private double price;
     private static  int count = 0;
+    
+    
+    public Book()
+    {
+    	players = new ArrayList<>();
+    	this.playground = playground;
+    	this.bookDate = bookDate;
+    	this.status = status;
+    	this.numberOfPlayers = numberOfPlayers;
+    	this.id = id;
+    	this.price = price;
+    }
 
     /**
      * Parameterized constructor to initialize the book.
@@ -52,7 +64,7 @@ public class Book {
         }
         else{
             price = (slot.length) * playground.getPrice();
-            payMoney();
+            //payMoney();
         }
     }
 
@@ -82,7 +94,7 @@ public class Book {
         else if(status == BookStatus.refused){
             System.out.println("The owner refused the booking");
             this.status = status;
-            playground.setHours(slots);
+            //playground.setHours(slots);
         }
     }
 
@@ -113,7 +125,7 @@ public class Book {
         else{
             numberOfPlayers++;
             players.add(player);
-            player.addBook(this);
+           // player.addBook(this);
             return true;
         }
     }
@@ -123,10 +135,10 @@ public class Book {
      * it transfers the money from the player to the owner.
      * @return true if there is enough money to pay for the booking and false otherwise.
      */
-    public boolean payMoney(){
-        if(player.get(0).getEwallet() - price >= 0){
-            player.transferMoney(price, playground.getPlaygroundOwner());
-            playground.deleteHours(slots);
+   /** public boolean payMoney(){
+        //if(Player.get(0).getEwallet() - price >= 0){
+            //Player.transferMoney(price, playground.getPlaygroundOwner());
+           // playground.deleteHours(slots);
             playground.getPlaygroundOwner().addBook(this);
             return true;
         }
@@ -134,11 +146,11 @@ public class Book {
             System.out.println("Not enough money in the e-wallet to pay");
             return false;
         }
-    }
+    }**/
 
-    public void sendInvitation(){
+    /**public void sendInvitation(){
 
-    }
+    }**/
 
     /**
      * It prints the information of the booking.

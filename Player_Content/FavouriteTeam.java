@@ -17,7 +17,7 @@ import java.util.ArrayList;
 /**
  * The Class is an abstract for generalizations with other classes
  */
-public abstract class FavouriteTeam {
+public class FavouriteTeam {
 	protected ArrayList<String>names;
 	protected ArrayList<String>emails;
 	
@@ -27,8 +27,25 @@ public abstract class FavouriteTeam {
 	public FavouriteTeam()
 	{
 		names = new ArrayList<>();
-		emails = new ArrayList<>();
-		
+		emails = new ArrayList<>();	
+	}
+	
+	/**
+	 * add names of team to arrayList
+	 * @param name
+	 */
+	public void addNames(String name)
+	{
+		names.add(name);
+	}
+	
+	/**
+	 * add mails of team to arraylist
+	 * @param email
+	 */
+	public void addEmails(String email)
+	{
+		emails.add(email);
 	}
 	
 	/**

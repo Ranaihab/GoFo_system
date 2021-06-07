@@ -4,7 +4,6 @@ import PlaygroundOwnreContent.Playground;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 /**
  * class is responsible for holding all the data of the system.
  */
@@ -13,19 +12,48 @@ public class GoFo {
     private ArrayList<PlaygroundOwner> owners;
     private ArrayList<Playground> playgrounds;
     private ArrayList<Book> books;
-    private Administrator admin;
+    private Adminstrator admin;
 
+    public GoFo()
+    {
+        this.admin = admin;
+        players = new ArrayList<Player>(0);
+        playgrounds = new ArrayList<Playground>(0);
+        owners = new ArrayList<PlaygroundOwner>(0);
+        books = new ArrayList<Book>(0);
+    }
     /**
      * constructor for GoFo class.
      * @param admin will be the administrator of the system.
      */
-    public GoFo(Administrator admin){
+    public GoFo(Adminstrator admin){
         this.admin = admin;
         players = new ArrayList<Player>(0);
-        playergrounds = new ArrayList<Playground>(0);
+        playgrounds = new ArrayList<Playground>(0);
         owners = new ArrayList<PlaygroundOwner>(0);
         books = new ArrayList<Book>(0);
     }
+    
+    public ArrayList<Player> getPlayers()
+    {
+    	return players;
+    }
+    
+    public ArrayList<Playground> getPlaygrounds()
+    {
+    	return playgrounds;
+    }
+    
+    public ArrayList<PlaygroundOwner> getOwners()
+    {
+    	return owners;
+    }
+    
+    public ArrayList<Book> getBooks()
+    {
+    	return books;
+    }
+    
     /**
      * This function prints all the books that are on the system so that another player can join the team.
      */
@@ -40,7 +68,7 @@ public class GoFo {
      */
     public void viewPlaygrounds(){
         for(int i = 0; i<playgrounds.size(); i++){
-            playgrounds.get(i).print();
+            playgrounds.get(i).toString();
         }
     }
 
@@ -51,7 +79,7 @@ public class GoFo {
     public void filterByLocation(String city){
         for(int i = 0; i<playgrounds.size(); i++){
             if(playgrounds.get(i).getLocation().getCity().equalsIgnoreCase(city)) {
-                playgrounds.get(i).print();
+                playgrounds.get(i).toString();
             }
         }
     }
@@ -86,7 +114,7 @@ public class GoFo {
      */
     public void removeBook(Book book){
         for(int i = 0; i<books.size(); i++){
-            if(books.get(i).getID() == book.getID()){
+            if(books.get(i).getId() == book.getId()){
                 books.remove(i);
                 break;
             }
@@ -119,7 +147,7 @@ public class GoFo {
             boolean isExist = false;
 
             for(int i = 0; i<players.size(); i++){
-                if(players.get(i).getEmail().equalsIgnoreCase(x)){
+                if(players.get(i).getMail().equalsIgnoreCase(x)){
                     System.out.println("User already exists");
                     isExist = true;
                     break;
@@ -140,8 +168,8 @@ public class GoFo {
                 System.out.print("Location street: ");
                 String street = input.nextLine();
                 Location loc = new Location(city, street);
-                User player = new Player(name, ID, pass, x, phone, loc);
-                players.add(player);
+                User player = new Player(name, ID, x,pass, phone, loc);	
+                players.add((Player) player);	
             }
         }
         else if(x.equalsIgnoreCase("playground owner")){
@@ -151,7 +179,7 @@ public class GoFo {
             boolean isExist = false;
 
             for(int i = 0; i<owners.size(); i++){
-                if(ownerss.get(i).getEmail().equalsIgnoreCase(x)){
+                if(owners.get(i).getMail().equalsIgnoreCase(x)){
                     System.out.println("User already exists");
                     isExist = true;
                     break;
@@ -172,8 +200,8 @@ public class GoFo {
                 System.out.print("Location street: ");
                 String street = input.nextLine();
                 Location loc = new Location(city, street);
-                User owner = new PlaygroundOwner(name, ID, pass, x, phone, loc);
-                owners.add(owner);
+                //User owner = new PlaygroundOwner(name, ID, pass, x, phone, loc);
+                //owners.add(owner);
             }
         }
 

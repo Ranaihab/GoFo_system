@@ -4,119 +4,32 @@ import java.util.Scanner;
 /**
  * This class is responsible for setting the playground owner information
  */
-public class PlaygroundOwner {
+public class PlaygroundOwner extends User {
         private static  int count =0;
-        private String name;
-        private int ID;
-        private String password;
-        private String email;
-        private String phone;
-        private Location location;
+   
         private ArrayList<Book> books;
         private ArrayList<Playground> playgrounds;
-
-    /**
-     * parametrized constructor to set the information of the playground owner
-     * @param name name of the playground owner
-     * @param password password of his account
-     * @param email email he want to register with
-     * @param phone his phone number
-     * @param location his location
-     * @param books the books in his playgrounds
-     * @param playgrounds his playgrounds
-     */
-    public PlaygroundOwner(String name, String password, String email, String phone, Location location, ArrayList<Book> books, ArrayList<Playground> playgrounds) {
-        this.name = name;
-        this.password = password;
-        this.email = email;
-        this.phone = phone;
-        this.location = location;
-        this.books = books;
-        this.playgrounds = playgrounds;
-        ID = ++count;
-    }
-
-    /**
-     *
-     * @return name of the playground owner
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * set the name of the playground owner
-     * @param name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     *
-     * @return password of the playground owner account
-     */
-
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * set the password of the playground owner account
-     * @param password
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    /**
-     * get the email of the playground owner account
-     * @return email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * set the email of the playground owner account
-     * @param email
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    /**
-     * get the phone number of the playground owner
-     * @return phone
-     */
-    public String getPhone() {
-        return phone;
-    }
-
-    /**
-     * set the phone number of the playground owner
-     * @param phone
-     */
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    /**
-     * get the location of the playground owner
-     * @return location
-     */
-    public Location getLocation() {
-        return location;
-    }
-
-    /**
-     * set the location of the playground owner
-     * @param location
-     */
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
+        
+        /**
+         * parametrized constructor to set the information of the playground owner
+         * @param name name of the playground owner
+         * @param password password of his account
+         * @param email email he want to register with
+         * @param phone his phone number
+         * @param location his location
+         * @param books the books in his playgrounds
+         * @param playgrounds his playgrounds
+         */
+        public PlaygroundOwner(String n, int id, String mail, String pass, String ph, Location loc, Location location, ArrayList<Book> books, ArrayList<Playground> playgrounds)
+    	{
+    		super(n,id,mail,pass,ph,loc);
+            this.books = books;
+            this.playgrounds = playgrounds;
+            ID = ++count;
+    		
+    	}
+ 
+   
     /**
      * get all the book of the playgrounds that is owned by this user
      * @return books

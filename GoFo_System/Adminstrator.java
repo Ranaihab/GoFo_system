@@ -36,10 +36,13 @@ public abstract class Adminstrator {
 		playground.setStatus(PlaygroundStatus.activate);
 	}
 	
-	public Playground deletePlayground(Playground playground)
+	/**public Playground deletePlayground(Playground playground)		//TODO
 	{
-		
-	}
+		GoFo gofo = null;
+		gofo.removePlayground(playground);
+		playground.setStatus(PlaygroundStatus.deleted);
+		return 
+	}**/
 	
 	/**
 	 * boolean function to return true if the playground is accepted or return false if it's not
@@ -62,6 +65,9 @@ public abstract class Adminstrator {
 	public void addPlayground(Playground playground)
 	{
 		playground.setStatus(PlaygroundStatus.activate);
+		GoFo p = null;
+		p.addPlayground(playground);
+		
 	}
 	
 	/**
@@ -71,6 +77,8 @@ public abstract class Adminstrator {
 	public void removePlayground(Playground playground)
 	{
 		playground.setStatus(PlaygroundStatus.deleted);
+		GoFo p = null;
+		p.removePlayground(playground);
 	}
 	
 

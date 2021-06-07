@@ -1,5 +1,7 @@
 package GoFo_System;
 
+import PlaygroundOwnerContent.Location;
+
 /**
  * @author Alaa Mahmoud Ebrahim
  * ID: 20190105
@@ -22,7 +24,7 @@ public abstract class User {
 	protected String email;
 	protected String password;
 	protected String phone;
-	protected String location;
+	protected Location location;
 	protected double eWallet;
 	
 	/**
@@ -35,7 +37,7 @@ public abstract class User {
 	 * @param loc is location of user
 	 * @param eW is eWallet of user  
 	 */
-	public User(String n, int id, String mail, String pass, String ph, String loc, double eW )
+	public User(String n, int id, String mail, String pass, String ph, Location loc)
 	{
 		name = n;
 		id = ID;
@@ -43,7 +45,7 @@ public abstract class User {
 		ph = phone;
 		pass = password;
 		loc = location;
-		eW = eWallet;
+		eWallet = 0;
 	}
 	
 	/**
@@ -140,7 +142,7 @@ public abstract class User {
 	 * Gets the location of the user
 	 * @return location
 	 */
-	public String getLocation()
+	public Location getLocation()
 	{
 		return location;
 	}
@@ -149,7 +151,7 @@ public abstract class User {
 	 * Sets the location of the user
 	 * @param location
 	 */
-	public void setLocation(String location)
+	public void setLocation(Location location)
 	{
 		this.location = location;
 	}
