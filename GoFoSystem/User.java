@@ -1,4 +1,4 @@
-package GoFo_System;
+package GoFoSystem;
 
 import PlaygroundOwnerContent.Location;
 
