@@ -1,3 +1,15 @@
+/**
+ * @author Alaa Mahmoud Ebrahim
+ * ID: 20190105
+ * Group: 12
+ * @author Rana Ihab Ahmed Fahmy
+ * ID: 20190207
+ * Group: 12
+ * @author Habeba Rabie Hassan
+ * ID: 20190167
+ * Group: 11
+ */
+
 package PlaygroundOwnerContent;
 import GoFoSystem.*;
 
@@ -10,9 +22,9 @@ Location {
     private String city;
 
     /**
-     * parameterized constructor
-     * @param street
-     * @param city
+     * parameterized constructor.
+     * @param street where the location is.
+     * @param city where the location is.
      */
     public Location(String street, String city) {
         this.street = street;
@@ -20,32 +32,32 @@ Location {
     }
 
     /**
-     * get the street in the location
-     * @return street
+     * get the street in the location.
+     * @return street.
      */
     public String getStreet() {
         return street;
     }
 
     /**
-     * set the street in the location
-     * @param street
+     * set the street in the location.
+     * @param street where the location is.
      */
     public void setStreet(String street) {
         this.street = street;
     }
 
     /**
-     * get the city in the location
-     * @return city
+     * get the city in the location.
+     * @return city.
      */
     public String getCity() {
         return city;
     }
 
     /**
-     * set the city in the location
-     * @param city
+     * set the city in the location.
+     * @param city where the location is.
      */
     public void setCity(String city) {
         this.city = city;
@@ -53,7 +65,7 @@ Location {
 
     /**
      *
-     * @return string contains the data of the playground
+     * @return string contains the data of the playground.
      */
     @Override
     public String toString() {

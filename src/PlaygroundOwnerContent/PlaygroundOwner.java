@@ -1,9 +1,21 @@
+/**
+ * @author Alaa Mahmoud Ebrahim
+ * ID: 20190105
+ * Group: 12
+ * @author Rana Ihab Ahmed Fahmy
+ * ID: 20190207
+ * Group: 12
+ * @author Habeba Rabie Hassan
+ * ID: 20190167
+ * Group: 11
+ */
+
 package PlaygroundOwnerContent;
 import java.util.ArrayList;
 import java.util.Scanner;
 import GoFoSystem.*;
 /**
- * This class is responsible for setting the playground owner information
+ * This class is responsible for setting the playground owner information and all the functions he can perform.
  */
 public class PlaygroundOwner extends User {
         private static  int count =0;
@@ -12,12 +24,12 @@ public class PlaygroundOwner extends User {
         private ArrayList<Playground> playgrounds;
         
         /**
-         * parametrized constructor to set the information of the playground owner
-         * @param name name of the playground owner
-         * @param password password of his account
-         * @param mail email he want to register with
-         * @param phone his phone number
-         * @param loc his location
+         * parametrized constructor to set the information of the playground owner.
+         * @param name name of the playground owner.
+         * @param password password of his account.
+         * @param mail email he want to register with.
+         * @param phone his phone number.
+         * @param loc his location.
          */
         public PlaygroundOwner(String name, int id, String mail, String password, String phone, Location loc, double money)
     	{
@@ -30,37 +42,39 @@ public class PlaygroundOwner extends User {
  
    
     /**
-     * get all the book of the playgrounds that is owned by this user
-     * @return books
+     * get all the book of the playgrounds that is owned by this user.
+     * @return books arraylist of books of owner.
      */
     public ArrayList<Book> getBooks() {
         return books;
     }
+
     /**
-     * set all the book of the playgrounds that is owned by this user
-     * @return books
+     * set all the book of the playgrounds that is owned by this user.
+     * @return books the new books of the owner.
      */
     public void setBooks(ArrayList<Book> books) {
         this.books = books;
     }
 
     /**
-     * get all the playgrounds that is owned by this user
-     * @return an array of the playgrounds
+     * get all the playgrounds that is owned by this user.
+     * @return an array of the playgrounds.
      */
     public ArrayList<Playground> getPlaygrounds() {
         return playgrounds;
     }
+
     /**
-     * set all the playgrounds that is owned by this user
-     * @return
+     * set all the playgrounds that is owned by this user.
+     * @return playground of the owner.
      */
     public void setPlaygrounds(ArrayList<Playground> playgrounds) {
         this.playgrounds = playgrounds;
     }
 
     /**
-     * this function is responsible for viewing all the books
+     * this function is responsible for viewing all the books.
      */
     public void viewBooks(){
         for(int i = 0; i< books.size(); i++){
@@ -69,7 +83,7 @@ public class PlaygroundOwner extends User {
         }
     }
     /**
-     * this function is responsible for viewing all the playgrounds
+     * this function is responsible for viewing all the playgrounds.
      */
     public void viewPlaygrounds(){
         for(int i = 0; i< playgrounds.size(); i++){
@@ -79,7 +93,7 @@ public class PlaygroundOwner extends User {
     }
 
     /**
-     * this function is responsible for adding playground
+     * this function is responsible for registering and adding playground.
      */
     public void addPlayground(){
         Scanner input = new Scanner(System.in);
@@ -134,19 +148,17 @@ public class PlaygroundOwner extends User {
     }
 
     /**
-     * this function is responsible for adding book to playground
-     * @param book
+     * this function is responsible for adding book to playground.
+     * @param book to be added.
      */
-
     public void addBook(Book book){
         books.add(book);
     }
 
     /**
-     * this function is responsible for accepting or refusing the book requests
-     * @param book
+     * this function is responsible for accepting or refusing the book requests.
+     * @param book to be accepted or refused.
      */
-
     public boolean accept_refuseBooks(Book book){
         Scanner userInput = new Scanner(System.in);
         System.out.print("please enter your choice whether accept or refuse this book: ");

@@ -14,24 +14,24 @@ package PlayerContent;
 import java.util.ArrayList;
 
 /**
- * The Class is an abstract for generalizations with other classes
+ * The Class is an abstract for generalizations with other classes.
  */
 public class FavouriteTeam {
 	protected ArrayList<String>names;
 	protected ArrayList<String>emails;
 	
 	/**
-	 * Constructor for initializing arrays of names and email's for teams
+	 * Constructor for initializing arrays of names and email's for teams.
 	 */
 	public FavouriteTeam()
 	{
-		names = new ArrayList<>();
-		emails = new ArrayList<>();	
+		names = new ArrayList<>(0);
+		emails = new ArrayList<>(0);
 	}
 	
 	/**
-	 * add names of team to arrayList
-	 * @param name of member of favorite team to be added
+	 * add names of team to arrayList.
+	 * @param name of member of favorite team to be added.
 	 */
 	public void addNames(String name)
 	{
@@ -39,8 +39,8 @@ public class FavouriteTeam {
 	}
 	
 	/**
-	 * add mails of team to arraylist
-	 * @param email of member of favorite team to be added
+	 * add mails of team to arraylist.
+	 * @param email of member of favorite team to be added.
 	 */
 	public void addEmails(String email)
 	{
@@ -48,8 +48,8 @@ public class FavouriteTeam {
 	}
 	
 	/**
-	 * Gets the names of teams from the array list
-	 * @return all names of members in team
+	 * Gets the names of teams from the array list.
+	 * @return all names of members in team.
 	 */
 	public ArrayList<String> getNames()
 	{
@@ -57,8 +57,8 @@ public class FavouriteTeam {
 	}
 	
 	/**
-	 * Gets mails of teams from the array list
-	 * @return all emails of members in team
+	 * Gets mails of teams from the array list.
+	 * @return all emails of members in team.
 	 */
 	public ArrayList<String> getEmails()
 	{

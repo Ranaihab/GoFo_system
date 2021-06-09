@@ -1,3 +1,15 @@
+/**
+ * @author Alaa Mahmoud Ebrahim
+ * ID: 20190105
+ * Group: 12
+ * @author Rana Ihab Ahmed Fahmy
+ * ID: 20190207
+ * Group: 12
+ * @author Habeba Rabie Hassan
+ * ID: 20190167
+ * Group: 11
+ */
+
 package GoFoSystem;
 
 import PlaygroundOwnerContent.*;
@@ -95,7 +107,6 @@ public class GoFo {
 
     /**
      * Prints the playgrounds that are in this city.
-     *
      * @param city the city that we want the playgrounds that are in it.
      */
     public void filterByLocation(String city) {
@@ -122,7 +133,6 @@ public class GoFo {
 
     /**
      * Add to the system the playground that is registered so it could be viewed later by the player.
-     *
      * @param pg playground to be added to the system.
      */
     public void addPlayground(Playground pg) {
@@ -131,7 +141,6 @@ public class GoFo {
 
     /**
      * Add to the system the book that is booked by a player so it could be viewed later by the player.
-     *
      * @param book to be added to the system.
      */
     public void addBook(Book book) {
@@ -140,7 +149,6 @@ public class GoFo {
 
     /**
      * It removes the book from the system if it is canceled or refused.
-     *
      * @param book to be removed.
      */
     public void removeBook(Book book) {
@@ -154,7 +162,6 @@ public class GoFo {
 
     /**
      * It removes the playground from the system if it is deleted by the admin.
-     *
      * @param pg playground to be deleted.
      */
     public void removePlayground(Playground pg) {
@@ -240,4 +247,4 @@ public class GoFo {
         owners.add(owner);
         return owner;
     }
-};
+}

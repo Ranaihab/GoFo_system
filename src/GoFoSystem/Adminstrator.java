@@ -14,14 +14,19 @@ package GoFoSystem;
 
 import PlaygroundOwnerContent.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-
+/**
+ * Class contains all the functions that the administrator of the system is responsible for.
+ */
 public class Adminstrator {
-	GoFo gofo;
+	private GoFo gofo;
+	private ArrayList<Playground> playgrounds;
 
 	public Adminstrator(GoFo g){
 		gofo = g;
+		playgrounds = new ArrayList<>(0);
 	}
 
 	/**
@@ -35,8 +40,8 @@ public class Adminstrator {
 	}
 	
 	/**
-	 * void function to activate the playground
-	 * @param playground
+	 * void function to activate the playground.
+	 * @param playground to be activated.
 	 */
 	public void activatePlayground(Playground playground)
 	{
@@ -44,15 +49,20 @@ public class Adminstrator {
 			playground.setStatus(Playground.PlaygroundStatus.activate);
 	}
 
+	/**
+	 * Function to delete playgrounds from the system
+	 * @param playground to be deleted.
+	 */
 	public void deletePlayground(Playground playground)
 	{
 		playground.setStatus(Playground.PlaygroundStatus.deleted);
+		gofo.removePlayground(playground);
 	}
 	
 	/**
-	 * boolean function to return true if the playground is accepted or return false if it's not
-	 * @param playground
-	 * @return true or false
+	 * function to accept or refuse registering a playground to the system.
+	 * @param playground that will be either accepted or refused.
+	 * @return true if playground accepted or false otherwise.
 	 */
 	public boolean acceptPlayground(Playground playground)
 	{
@@ -63,33 +73,37 @@ public class Adminstrator {
 		{
 			gofo.addPlayground(playground);
 			playground.setStatus(Playground.PlaygroundStatus.activate);
+			removePlayground(playground);
 			return true;
 		}
 		else{
 			playground.setStatus(Playground.PlaygroundStatus.refused);
+			removePlayground(playground);
 			return false;
 		}
 	}
-	
+
 	/**
-	 * void function adds playgrounds and activate their state
-	 * @param playground
+	 * void function adds playgrounds to the arraylist of the administrator
+	 * @param playground to be added
 	 */
 	public void addPlayground(Playground playground)
 	{
-		playground.setStatus(Playground.PlaygroundStatus.activate);
-		GoFo p = null;
-		p.addPlayground(playground);
-		
+		playgrounds.add(playground);
+
 	}
-	
+
 	/**
-	 * void function to delete playgrounds 
-	 * @param playground
+	 * Function to remove playground from the arraylist of the administrator so that only requests that are not seen are in the array.
+	 * @param playground to be removed.
 	 */
-	public void removePlayground(Playground playground)
-	{
-		playground.setStatus(Playground.PlaygroundStatus.deleted);
-		gofo.removePlayground(playground);
+	public void removePlayground(Playground playground){
+		for (int i = 0; i < playgrounds.size(); i++) {
+			if (playgrounds.get(i).getID() == playground.getID()) {
+				playgrounds.remove(i);
+				break;
+			}
+		}
 	}
+
 }

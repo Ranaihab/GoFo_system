@@ -1,4 +1,3 @@
-
 /**
  * @author Alaa Mahmoud Ebrahim
  * ID: 20190105
@@ -17,96 +16,12 @@ import GoFoSystem.*;
 import PlayerContent.*;
 import PlaygroundOwnerContent.*;
 
-
+/**
+ * Class gives a list of choice to the user to perform in the system.
+ */
 public class Main {
 
 	
-
-	/*public static void mainMenu()
-	{
-		Scanner scanner = new Scanner(System.in);
-		GoFo gofo = new GoFo();
-		String option =" ";
-		while (true)
-		{
-			System.out.println("\n1- Register" +
-                    "\n2- Exit");	
-			option = scanner.nextLine();
-			if (option.equalsIgnoreCase("1"))
-			{
-				gofo.register();
-				playerMenu();
-			}
-			
-			else if (option.equalsIgnoreCase("2"))
-			{
-				break;
-			}
-			
-			else 
-			{
-				System.out.println("Enter valid option");
-			}
-		}
-		
-	}
-	
-	public static void playerMenu(GoFo gofo, Player pl)
-	{
-		Scanner scanner = new Scanner(System.in);
-		String option =" ";
-		while (true) {
-			System.out.println(
-	                "\n1- View Books"+
-					"\n2- View my Books"+
-	                "\n3- Display Playgrounds and Book Playground"+
-	                "\n4- Exit"
-					);
-			System.out.println("Enter your choice: ");
-			option = scanner.nextLine();
-			if (option.equalsIgnoreCase("1"))
-			{
-				gofo.viewBooks();
-			}
-			
-			else if (option.equalsIgnoreCase("2"))
-			{
-				pl.viewBooks();
-
-			}
-			
-			else if (option.equalsIgnoreCase("3"))
-			{
-				gofo.viewActivatedPlaygrounds();
-				System.out.print("Do you want to filter by location (yes/no): ");
-				String op = scanner.nextLine();
-				if(op.equalsIgnoreCase("yes")){
-					System.out.print("Enter City to filter: ");
-					op = scanner.nextLine();
-					gofo.filterByLocation(op);
-				}
-				System.out.print("Do you want to book (yes/no): ");
-				if(op.equalsIgnoreCase("yes")){
-					System.out.print("Enter playground id: ");
-					int id = scanner.nextInt();
-					scanner.nextLine();
-					for(int i =0; i<gofo.getPlaygrounds().size(); i++){
-						if(gofo.getPlaygrounds().get(i).getID() == id){
-							pl.book(gofo.getPlaygrounds().get(i));
-							break;
-						}
-					}
-				}
-			}
-			
-			else if (option.equalsIgnoreCase("5"))
-			{
-				break;
-			}
-			
-			
-		}
-	}*/
 
 	public static void main(String[] args) {
 		GoFo gofo = new GoFo();
@@ -133,6 +48,8 @@ public class Main {
 					}
 					else if(op.equals("2")){
 						owner.addPlayground();
+						Playground playground = owner.getPlaygrounds().get(owner.getPlaygrounds().size() - 1);
+						gofo.getAdmin().addPlayground(playground);
 						System.out.print("As an administrator, ");
 						gofo.getAdmin().acceptPlayground(owner.getPlaygrounds().get(owner.getPlaygrounds().size() - 1));
 					}
@@ -144,6 +61,7 @@ public class Main {
 					}
 				}
 			}
+
 			else if(op.equalsIgnoreCase("player")){
 				Player player = gofo.playerRegister();
 				while(true) {

@@ -26,13 +26,14 @@ public class Player extends User {
 	private ArrayList<Book> books;
 
 	/**
-	 * Constructor for player
-	 * @param n
-	 * @param id
-	 * @param mail
-	 * @param pass
-	 * @param ph
-	 * @param loc
+	 * Constructor for player.
+	 * @param n name of the player.
+	 * @param id his id.
+	 * @param mail email of player.
+	 * @param pass password of the player on the system.
+	 * @param ph phone number to contact him.
+	 * @param loc his default location.
+     * @param money initial amount money in his e-Wallet.
 	 */
 	public Player(String n, int id, String mail, String pass, String ph, Location loc, Double money)
 	{
@@ -41,14 +42,15 @@ public class Player extends User {
 	}
 
 	/**
-	 * @return all books that the player booked
+	 * @return all books that the player booked.
 	 */
 	public ArrayList<Book> getBooks(){
 		return books;
 	}
+
 	/**
-	 * void function to book playgrounds 
-	 * @param playground that player will book
+	 * void function to book playgrounds.
+	 * @param playground that player will book.
 	 */
 	public void book(Playground playground)
 	{
@@ -73,9 +75,9 @@ public class Player extends User {
 	}
 
 	/**
-	 * check if there's book or not 
-	 * @param book
-	 * @return true if booked and false if it's not booked 
+	 * Used to book an already booked book, it is like joining a team where number of players book the same book.
+	 * @param book that the player would want to book with other player.
+	 * @return true if booked and false if it's not booked.
 	 */
 	public boolean book(Book book)
 	{
@@ -83,7 +85,7 @@ public class Player extends User {
 	}
 
 	/**
-	 * View books of the player
+	 * View books of the player.
 	 */
 	public void viewBooks(){
 		for(int i = 0; i<books.size(); i++){

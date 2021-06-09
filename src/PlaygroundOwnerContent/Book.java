@@ -1,3 +1,15 @@
+/**
+ * @author Alaa Mahmoud Ebrahim
+ * ID: 20190105
+ * Group: 12
+ * @author Rana Ihab Ahmed Fahmy
+ * ID: 20190207
+ * Group: 12
+ * @author Habeba Rabie Hassan
+ * ID: 20190167
+ * Group: 11
+ */
+
 package PlaygroundOwnerContent;
 import GoFoSystem.*;
 import PlayerContent.*;
@@ -138,9 +150,6 @@ public class Book {
         }
     }
 
-    /**public void sendInvitation(){
-
-    }**/
 
     /**
      * It prints the information of the booking.
